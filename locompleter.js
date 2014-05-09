@@ -52,7 +52,7 @@ angular.module('locompleter', [])
               });
 
               // Force view model to update after autocompletion
-              $element.trigger('input');
+              $element.triggerHandler('input');
             });
           });
         }
