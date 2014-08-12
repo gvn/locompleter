@@ -28,7 +28,11 @@ angular.module('locompleter', [])
       controller: ['$element', '$scope', 'googleMaps',
         function ($element, $scope, googleMaps) {
           googleMaps.init(function onReady() {
-            var autocomplete = new google.maps.places.Autocomplete($element[0], {});
+            /* Query options - limit to city and country */
+            var options = {
+                types: ['(cities)', 'country']
+            };
+            var autocomplete = new google.maps.places.Autocomplete($element[0], options);
 
             autocomplete.addListener('place_changed', function () {
               var placeData = autocomplete.getPlace();
