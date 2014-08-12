@@ -31,7 +31,7 @@ angular.module('locompleter', [])
             /* Query options - limit to city and country */
             var options = {
                 types: ['(cities)', 'country']
-            }
+            };
             var autocomplete = new google.maps.places.Autocomplete($element[0], options);
 
             autocomplete.addListener('place_changed', function () {
